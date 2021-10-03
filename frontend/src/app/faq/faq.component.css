@@ -1,0 +1,62 @@
+body {	
+	
+	position: relative;
+	color: black;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	font-weight: 400;
+	overflow-x: hidden;
+}
+summary {
+  margin-left: 200px;
+  margin-top: 40px;
+  align-self: flex-end;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #2d8b79;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 0.25rem;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    height: 50px;
+    width: 600px;
+  }
+  .faq__content{
+    margin-left: 200px;
+    font-size: 1.25rem;
+    font-weight: 60;
+    background-color:#81ddcb;
+    color: #333;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: 0.25rem;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    height: relative;
+    width: 600px;
+  }
+  .container{
+      color: blue;
+  }
+  details > summary::after {
+    position: absolute;
+    content: "+";
+    right: 20px;
+  }
+  details[open] > summary::after {
+    position: absolute;
+    content: "-";
+    right: 20px;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+  }

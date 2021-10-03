@@ -1,0 +1,82 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.tab{
+ 
+margin-top: 50px;
+border-left: 10px;
+border-top: 500px;
+width: 100%;
+height: 100%;
+box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+
+}
+.tab:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+table {
+  width: 100%;
+  background-color: (even) #eee;
+  background-color: (odd) rgb(63, 56, 56);
+}
+.heroes .li
+{
+  background-color: red;
+  color: white;
+}
+
+.searchbox {
+  position: relative;
+  background-color: #fff;
+  border-radius: 18px;
+}
+button
+{
+background-color: #04AA6D;
+  border: none;
+  color: white;
+  width: 100px;
+  
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+
+button:focus{
+  background:rgb(9, 109, 109);
+  
+}
+.mat-header-cell
+{
+  font: bold;
+}
+.mat-table {
+  overflow: auto;
+  width: 100%;
+  max-height: 100%;
+  background-color: (even) #eee;
+  background-color: (odd) rgb(63, 56, 56);
+}
+.basic-container {
+  padding: 5px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.mat-row.hovered {
+  background: rgb(199, 247, 233);
+}
+
+li:hover{
+  background-color:rgb(199, 247, 233);
+  cursor:pointer;
+  color: black;
+}
+
+li{
+  margin-left: -20px;
+}

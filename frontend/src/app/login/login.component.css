@@ -1,0 +1,207 @@
+/* 
+.gif-container{
+  background: url("https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif") center;
+  block-size: 100%;
+  position: initial;
+  background-size: cover;
+  /* background-repeat: unset; 
+  max-height: 2000px;
+  max-width: 2000px;
+  padding: unset;
+
+}
+.icon {
+  padding: 10px;
+  background: rgb(112, 149, 185);
+  color: white;
+  min-width: 40px;
+  text-align: center;
+}
+
+.card {
+  
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    box-shadow: 20px 20px 80px rgb(90, 87, 87)
+    
+}
+.btn:hover {
+    background-color: #3264A8;
+   
+  }
+  button {
+    background-color: #111111;
+    
+    /* padding: 10px 40px; */
+    /* border-radius: 3px; 
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+  }
+  .p-col {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+  }
+  
+   */
+  
+   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+   * {
+	   box-sizing: border-box;
+   }
+   
+   body {
+	   background:#FFFFFF;
+	   font-family: 'Montserrat', sans-serif;
+	   height: 80vh;
+     margin-top:15vh;
+      
+   }
+   
+   h1 {
+	   font-weight: bold;
+	   margin: 0;
+   }
+   
+   h2 {
+	   text-align: center;
+   }
+   
+   p {
+	   font-size: 14px;
+	   font-weight: 100;
+	   line-height: 20px;
+	   letter-spacing: 0.5px;
+	   margin: 20px 0 30px;
+   }
+   
+   span {
+	   font-size: 12px;
+   }
+   
+   a {
+	   color: rgb(80, 80, 80);
+	   font-size: 14px;
+	   text-decoration: none;
+	   align-self:flex-end;
+	   padding-right: 45px;
+   }
+   
+   
+   button {
+	   border-radius: 20px;
+	   border: 1px solid #39a01c;
+	   background-color: #39a01c;
+	   color: #FFFFFF;
+	   font-size: 12px;
+	   font-weight: bold;
+	   padding: 12px 45px;
+	   letter-spacing: 1px;
+   }
+   
+   button:active {
+	   transform: scale(0.95);
+   }
+   
+   button:focus {
+	   outline: none;
+   }
+   
+   button.signupBtn {
+	   background-color: transparent;
+	   border-color: #FFFFFF;
+   }
+   
+   button.signinBtn {
+	   margin-top: 20px;
+   }
+   
+   form {
+	   background-color: #FFFFFF;
+	   display: flex;
+	   align-items: center;
+	   justify-content: center;
+	   flex-direction: column;
+	   padding: 0 50px;
+	   height: 100%;
+	   text-align: center;
+   }
+   
+   input {
+	   background-color: #eee;
+	   border: none;
+	   padding: 12px 50px;
+	   margin: 3px 0;
+	   width:100%;    
+   }
+   
+   .container {
+	   display: flex;
+     padding: 0px;
+	   border-radius: 10px;
+		 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			   0 10px 10px rgba(0,0,0,0.22);
+	   position: relative;
+	   overflow: hidden;
+	   width: 100vh;
+	   height:55vh;
+	   background-color: #287512;
+     background-image: linear-gradient(to right, #20630e , #fff);
+   }
+   
+   .sub-container-left{
+	   background-image: url("../../assets/images/bg-green.png");
+	   background-position: center; 
+	   background-size: cover;
+	   background-position: 10%;
+	   height: inherit;
+	   width: 40vh;
+	   color:#fff ;
+	   align-content: center;
+     
+   }
+   
+   .contents{
+	   margin: auto;
+	   width:80%;
+	   height:50%;
+	   margin-top: 17vh;
+	   text-align: center; 
+	   
+   }
+   
+   .sub-container-right{
+	   width:60vh;
+   }
+   
+   
+   i {
+	   position: absolute;
+	}
+   
+   .icon {
+	   padding: 15px;
+	   width: 70px;
+	   text-align: left;
+	}
+   
+   .field-container{
+	   margin-bottom: 10px;;
+   }
+   
+   .sign-in-title{
+	   margin-bottom: 35px;
+   }
+   
+   
+   

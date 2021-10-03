@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="./register.component.css">
+ 
+    
+</head>
+<body>
+    <div class="container">
+        <div class="sub-container-left">
+            <div class="contents">
+                <h3 class="sub-title">Already a member?</h3>
+                <p>Sign in and see what's new since your last visit</p>
+                <button class="signupBtn" id="signIn" (click)="toSignin('/login')">Sign In</button>
+            </div>
+        </div>
+
+        <div class="sub-container-right">
+            <form *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+          >
+
+                <h1 class="sign-in-title">Create an account</h1>
+                <div class="field-container">
+                    <i class="fa fa-user icon"></i>
+                    <input type="username" id="username" placeholder="Username"
+                    
+                    name="username"
+                    [(ngModel)]="form.username"
+                    required
+                    minlength="3"
+                    maxlength="20"
+                    #username="ngModel"
+                  />
+                </div>
+
+                <div class="field-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email"
+                    name="email"
+                    [(ngModel)]="form.email"
+                    required
+                    email
+                    #email="ngModel"
+                  />
+                </div>
+                
+                <div class="field-container">
+                    <i class="fa fa-key icon"></i>
+                    <input type="password" placeholder="Password"
+                   
+                    name="password"
+                    [(ngModel)]="form.password"
+                    required
+                    minlength="6"
+                    #password="ngModel"
+                  />
+                </div>
+
+                <button class="signinBtn">Sign Up</button>
+                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                    Signup failed!<br />{{ errorMessage }}
+                  </div>
+            </form>
+            
+
+              <div class="alert alert-success" *ngIf="isSuccessful">
+                Your registration is successful!
+              </div>
+        </div>
+
+        
+    </div>
+</body>
+</html>

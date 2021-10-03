@@ -1,0 +1,72 @@
+<script src=
+"//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js">
+    </script>
+
+
+<div class="btn_container">
+    <div id="watchdiv" class="button" style="height: 50px; border-bottom: 10px; margin-top: 50px;" >
+        <button id="watchbutton" style="background-color: rgb(6, 153, 153); margin-top: 700px; border-top: 800px; float: right;color: white;"
+        mat-raised-button color="indigo"  size="sm" mdbWavesEffect type="button" class="m-0" (click)="onclick()">WATCHLIST</button>
+    
+        <button id="watchbutton" style="background-color: rgb(6, 153, 153); margin-top: 700px; border-top: 800px; color: white;"
+        mat-raised-button color="indigo"  size="sm" mdbWavesEffect type="button" class="m-0" (click)="refresh();">REFRESH</button>
+    </div>
+</div>
+
+
+<div class="row">
+
+<div class="tab" mat-elevation-z8 style="overflow-x:auto;">
+    <label style="font-weight: bold; color: teal; font-size: larger; margin-left: 25%; margin-bottom:5%;font-size: 30px;">ARBITRAGE RECOMMENDATION TABLE</label>
+    <mat-table [dataSource]="dataSource" matSort matSortActive="rank" matSortDirection='asc'  matSortDisableClear>
+        <ng-container matColumnDef="rank">
+            <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: medium; font-weight: bold; color: black; background-color: white;">RANK</mat-header-cell>
+            <mat-cell *matCellDef="let user">&nbsp;&nbsp;&nbsp;&nbsp;{{user.rank}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="companyname">
+            <mat-header-cell *matHeaderCellDef mat-sort-header  style="font-size: medium; font-weight: bold;color: black; background-color: white;">COMPANY</mat-header-cell>
+            <mat-cell *matCellDef="let user" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.companyname}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nse">
+            <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: medium; font-weight: bold; color: black; background-color: white;">NSE</mat-header-cell>
+            <mat-cell *matCellDef="let user">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.nse}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="bse">
+            <mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: medium; font-weight: bold; color: black; background-color: white;">BSE</mat-header-cell>
+            <mat-cell *matCellDef="let user">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.bse}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="priceDiff">
+            <mat-header-cell *matHeaderCellDef mat-sort-header  style="font-size: medium; font-weight: bold; color: black; background-color: white;">PRICE DIFF</mat-header-cell>
+            <mat-cell *matCellDef="let user">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.priceDiff}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="percentDiff">
+            <mat-header-cell *matHeaderCellDef  style="font-size: medium; font-weight: bold; color: black;  background-color: white;">PROFIT(%)</mat-header-cell>
+            <mat-cell *matCellDef="let user">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.percentDiff}}</mat-cell>
+        </ng-container>
+          
+        <ng-container matColumnDef="buy">
+            <mat-header-cell *matHeaderCellDef mat-sort-header   style="font-size: medium; font-weight: bold; color: black; background-color: white;">BUY FROM</mat-header-cell>
+            <mat-cell *matCellDef="let user">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.buy}}</mat-cell>
+        </ng-container>
+        
+
+
+        
+        <ng-container matColumnDef="Save" >
+            <th mat-header-cell *matHeaderCellDef style="font-size: medium; font-weight: bold; margin: 10px;"> </th>
+            <td mat-cell *matCellDef="let user" id={{user.companyname}} > <button mat-raised-button style="color: white; background-color: #04AA6D; "  type="button"
+                (click)="saveRecord(user.rank,user.companyname,user.nse,user.bse,user.pricediff,user.buy,user.percentDiff );">Save</button> </td>
+          </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns" color="primary">
+        <mat-row *matRowDef="let row; columns: displayedColumns;" style="display: flex;
+        margin: -10px;
+        justify-content: flex-start;"
+            [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}"
+            (click)="row.highlighted = !row.highlighted"   (mouseover)="row.hovered = true"
+            (mouseout)="row.hovered = false"></mat-row></mat-header-row>
+    
+    </mat-table>
+    
+    </div>
+</div>

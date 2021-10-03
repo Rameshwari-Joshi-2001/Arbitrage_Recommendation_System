@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="login.component.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-container-left">
+            <div class="contents">
+                <h3 class="sub-title">Not yet a member?</h3>
+                <p>Sign up and discover what we can do for you</p>
+                <button class="signupBtn" id="signUp" (click)="toSignup('/register')">Sign Up</button>
+            </div>
+        </div>
+
+        <div class="sub-container-right">
+            <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <h1 class="sign-in-title">Sign in</h1>
+                <div class="field-container">
+                    <i class="fa fa-user icon"></i>
+                    <input type="username" placeholder="Username" name="username"
+                        [(ngModel)]="form.username" required #username="ngModel" />
+                </div>
+                
+                <div class="field-container">
+                    <i class="fa fa-key icon"></i>
+                    <input type="password" placeholder="Password"name="password"
+                    [(ngModel)]="form.password"
+                    required
+                    minlength="6"
+                    #password="ngModel"
+                  />
+                </div>
+                
+
+                <!-- <a href="#">Forgot your password?</a> -->
+                <button class="signinBtn" >Sign In</button>
+                <div class="alert alert-warning" *ngIf="f.submitted && isLoginFailed">
+                    Login failed!<br />{{ errorMessage }}
+                  </div>
+
+               
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
